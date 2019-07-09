@@ -11,7 +11,7 @@ steps:
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION'
-timeout: '1600s'
+  timeout: '1600s'
 
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'Traffic Service'
