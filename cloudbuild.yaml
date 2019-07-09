@@ -5,10 +5,9 @@ steps:
   args:
   - 'app'
   - 'deploy'
-  - '$_DEPLOY_FILE'
+  - 'prod.yaml'
   - '--bucket'
-  - '$_BUCKET'
+  - 'gs://django-gcp-244102-webapp-prod'
   - '-q'
-  - '$_GAE_PROMOTE'
   - '-v'
-  - '$_GAE_VERSION'
+  - 'prod'
