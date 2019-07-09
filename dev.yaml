@@ -1,0 +1,3 @@
+service: dev-webapp
+runtime: nodejs10
+env: standard

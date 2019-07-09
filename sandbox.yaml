@@ -1,0 +1,3 @@
+service: sandbox-webapp
+runtime: nodejs10
+env: standard
