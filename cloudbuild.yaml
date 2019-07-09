@@ -5,6 +5,9 @@ steps:
   args:
   - 'app'
   - 'deploy'
+  - '$_DEPLOY_FILE'
+  - '--bucket'
+  - '$_BUCKET'
   - '--project'
   - '$PROJECT_ID'
   - '-q'
@@ -12,13 +15,13 @@ steps:
   - '-v'
   - '$_GAE_VERSION'
 
-- name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Traffic Service'
-  args:
-  - 'app'
-  - 'services'
-  - '--project'
-  - '$PROJECT_ID'
-  - 'set-traffic'
-  - '--splits'
-  - '$_GAE_TRAFFIC'
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   id: 'Traffic Service'
+#   args:
+#   - 'app'
+#   - 'services'
+#   - '--project'
+#   - '$PROJECT_ID'
+#   - 'set-traffic'
+#   - '--splits'
+#   - '$_GAE_TRAFFIC'
