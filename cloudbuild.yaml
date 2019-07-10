@@ -5,6 +5,8 @@ steps:
   - 'app'
   - 'deploy'
   - '--quiet'
+  - 'key'
+  - '$_KEY'
   # - '$_DEPLOY_FILE'
   # - '--bucket'
   # - '$_BUCKET'
