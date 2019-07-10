@@ -8,8 +8,6 @@ steps:
   - '$_DEPLOY_FILE'
   - '--bucket'
   - '$_BUCKET'
-  - '--project'
-  - '$PROJECT_ID'
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION'
