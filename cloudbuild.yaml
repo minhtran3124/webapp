@@ -4,7 +4,7 @@ steps:
   args:
   - 'app'
   - 'deploy'
-  - '--quite'
+  - '--quiet'
   - '$_DEPLOY_FILE'
   - '--bucket'
   - '$_BUCKET'
