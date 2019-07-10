@@ -11,7 +11,7 @@ steps:
   - '$_BUCKET'
   - '$_GAE_PROMOTE'
   - '-v'
-  - '$TAG_NAME'
+  - '$_GAE_VERSION-$SHORT_SHA'
 
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'Deploy with dev version'
