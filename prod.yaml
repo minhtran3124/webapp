@@ -1,3 +1,0 @@
-service: prod-webapp
-runtime: nodejs10
-env: standard
