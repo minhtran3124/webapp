@@ -1,16 +1,15 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Deploy App'
   args:
   - 'app'
   - 'deploy'
+  - '--quite'
   - '$_DEPLOY_FILE'
   - '--bucket'
   - '$_BUCKET'
   - '--project'
   - '$PROJECT_ID'
-  - '-q'
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION'
