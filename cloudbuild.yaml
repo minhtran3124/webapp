@@ -1,6 +1,7 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
+  id: 'Deploy To App Engine'
   args:
   - 'app'
   - 'deploy'
@@ -12,12 +13,11 @@ steps:
   - '-v'
   - '$_GAE_VERSION'
 
-# - name: 'gcr.io/cloud-builders/gcloud'
-#   args:
-#   - 'app'
-#   - 'services'
-#   - '--project'
-#   - '$PROJECT_ID'
-#   - 'set-traffic'
-#   - '--splits'
-#   - '$_GAE_TRAFFIC'
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'Set Traffic 100% for production version'
+  args:
+  - 'app'
+  - 'services'
+  - 'set-traffic'
+  - '--splits'
+  - '$_GAE_TRAFFIC'
