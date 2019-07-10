@@ -18,7 +18,8 @@ steps:
   args:
   - 'app'
   - 'services'
-  - '$_SERVICE_NAME'
   - 'set-traffic'
+  - '$_SERVICE_NAME'
   - '--splits'
   - '$_GAE_TRAFFIC'
+  - '-q'
