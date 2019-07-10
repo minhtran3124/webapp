@@ -1,7 +1,7 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Deploy with tag version'
+  id: 'Deploy with commit version without promote'
   args:
   - 'app'
   - 'deploy'
@@ -9,12 +9,13 @@ steps:
   - '$_DEPLOY_FILE'
   - '--bucket'
   - '$_BUCKET'
+  - '--no-promote'
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION-$SHORT_SHA'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Deploy with dev version'
+  id: 'Deploy with environment version without promote'
   args:
   - 'app'
   - 'deploy'
@@ -22,12 +23,13 @@ steps:
   - '$_DEPLOY_FILE'
   - '--bucket'
   - '$_BUCKET'
+  - '--no-promote'
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION'
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Set Traffic 100% for production version'
+  id: 'Set Traffic 100% for environment version'
   args:
   - 'app'
   - 'services'
