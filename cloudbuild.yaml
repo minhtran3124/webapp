@@ -1,7 +1,20 @@
 steps:
 
 - name: 'gcr.io/cloud-builders/gcloud'
-  id: 'Deploy To App Engine'
+  id: 'Deploy with tag version'
+  args:
+  - 'app'
+  - 'deploy'
+  - '--quiet'
+  - '$_DEPLOY_FILE'
+  - '--bucket'
+  - '$_BUCKET'
+  - '$_GAE_PROMOTE'
+  - '-v'
+  - '$TAG_NAME'
+
+- name: 'gcr.io/cloud-builders/gcloud'
+  id: 'Deploy with dev version'
   args:
   - 'app'
   - 'deploy'
