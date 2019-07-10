@@ -5,12 +5,12 @@ steps:
   - 'app'
   - 'deploy'
   - '--quiet'
-  # - '$_DEPLOY_FILE'
-  # - '--bucket'
-  # - '$_BUCKET'
-  # - '$_GAE_PROMOTE'
-  # - '-v'
-  # - '$_GAE_VERSION'
+  - '$_DEPLOY_FILE'
+  - '--bucket'
+  - '$_BUCKET'
+  - '$_GAE_PROMOTE'
+  - '-v'
+  - '$_GAE_VERSION'
 
 # - name: 'gcr.io/cloud-builders/gcloud'
 #   args:
