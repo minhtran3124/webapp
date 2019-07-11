@@ -28,6 +28,15 @@ steps:
   - '-v'
   - '$_GAE_VERSION'
 
+- name: 'ubuntu'
+  id: 'Set delay time to wait new version ready'
+  args: ['sleep', '60']
+  timeout: 100s
+
+- name: 'ubuntu'
+  id: 'Test set delay time'
+  args: ['echo', 'hello world, after 60s']
+
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'Set Traffic 100% for environment version'
   args:
