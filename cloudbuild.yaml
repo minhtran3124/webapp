@@ -14,13 +14,6 @@ steps:
   - '$_GAE_VERSION-$SHORT_SHA'
   - '--no-promote'
 
-- name: 'gcr.io/cloud-builders/curl'
-  args:
-  - 'https://dev-webapp-dot-django-gcp-244102.appspot.com'
-  - '-s'
-  - '--max-time'
-  - '10'
-
 - name: 'gcr.io/cloud-builders/gcloud'
   id: 'Deploy with environment version without promote'
   args:
