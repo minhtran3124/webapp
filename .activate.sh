@@ -2,6 +2,11 @@ export WEBAPP_HOME="$PROJ_HOME/webapp"
 export WEBAPP_SERVICE_NAME="${ENVIRONMENT}-webapp"
 
 
+function webapp-service-init() {
+    gcloud app update --split-health-checks --project $GCLOUD_PROJECT_ID
+}
+
+
 function webapp-service-build() {
     _util_print_information "Webapp: build"
 }
