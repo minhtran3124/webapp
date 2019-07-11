@@ -26,7 +26,7 @@ steps:
   - '$_GAE_PROMOTE'
   - '-v'
   - '$_GAE_VERSION'
-  - '--no-promot'
+  - '--no-promote'
 
 - name: 'ubuntu'
   id: 'Set delay time to wait new version ready'
