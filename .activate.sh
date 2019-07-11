@@ -24,7 +24,7 @@ function webapp-service-start() {
 function webapp-service-build() {
     if _util_env_is_local; then
         _util_print_information "Webapp: build"
-        cd $WEBAPP_HOME
+        _util_dir_push $WEBAPP_HOME
         yarn build
     fi
 }
@@ -33,7 +33,7 @@ function webapp-service-build() {
 function webapp-service-test() {
     if _util_env_is_local; then
         _util_print_information "Webapp: test"
-        cd $WEBAPP_HOME
+        _util_dir_push $WEBAPP_HOME
         yarn test
     fi
 }
@@ -42,7 +42,7 @@ function webapp-service-test() {
 function webapp-service-eject() {
     if _util_env_is_local; then
         _util_print_information "Webapp: eject"
-        cd $WEBAPP_HOME
+        _util_dir_push $WEBAPP_HOME
         yarn eject
     fi
 }
